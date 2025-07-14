@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo List Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer type="module"></script>
+</head>
+
+<body>
+    <nav>
+        <div id="Signup-btn">Signup</div>
+        <div id="login-btn">Login</div>
+        <div id="Logout-btn">Logout</div>
+    </nav>
+    <div class="container">
+        <h1>My Todo List</h1>
+
+        <div class="todo-input">
+            <input type="text" placeholder="Enter a new task" id="task-input">
+            <button id="add-task" >Add</button>
+        </div>
+
+        <ul class="todo-list">
+            <!-- Example task -->
+
+            <!-- Additional tasks will go here -->
+        </ul>
+    </div>
+
+    <div class="form-container" id="signup-form">
+        <h2>Sign Up</h2>
+        <form>
+            <i class="fa-solid fa-xmark"></i>
+            <input type="email" placeholder="Email" required id="Signup-form-email-input">
+            <input type="password" placeholder="Password" required id="signup-form-password-input">
+            <p id="jump-to-login">Already have account?</p>
+            <button type="submit" id="signup-form-btn">Create Account</button>
+        </form>
+    </div>
+
+    <div class="form-container" id="login-form">
+        <h2>Login</h2>
+        <form>
+            <i class="fa-solid fa-xmark"></i>
+            <input type="email" placeholder="Email" required id="Login-Email-input">
+            <input type="password" placeholder="Password" required id="Login-passowrd-input">
+            <p id="jump-to-signup">Don't have account?</p>
+            <button type="submit" id="login-form-btn">Login</button>
+        </form>
+    </div>
+
+    <div id="alert-box">
+        <p id="alert-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, repellat.</p>
+        <button id="alert-close-btn">OK</button>
+    </div>
+
+    <div id="verificattion-box">
+        <p id="verification-message">Verify your email to continue.</p>
+        <button id="get-verification-link-btn">Get Verfication link</button>
+    </div>
+
+    <div id="loader-container">
+        <div id="loader"></div>
+    </div>
+
+
+</body>
+
+</html>
