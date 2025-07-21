@@ -4,14 +4,9 @@ import {
     collection,
     addDoc,
     setDoc,
-    getDoc,
     getDocs,
-    updateDoc,
     deleteDoc,
     doc,
-    query,
-    where,
-    onSnapshot
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
 import {
@@ -19,13 +14,8 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     sendEmailVerification,
-    sendPasswordResetEmail,
     signOut,
-    updateProfile,
     onAuthStateChanged,
-    updateEmail,
-    updatePassword,
-    deleteUser
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
 
 
@@ -144,7 +134,8 @@ async function doneEditTask(taskContainer) {
     showBlockElem( taskContainer.querySelector('.edit-btn'), taskContainer.querySelector('.delete-btn') , taskContainer.querySelector('.task-check') , loader);
     let editedTask = taskContainer.querySelector('.task-text').textContent;
     await setDoc(docRef , {task : editedTask} , {merge : true});
-    getTodoList(auth.currentUser.email)
+    getTodoList(auth.currentUser.email);
+
 }
 
 async function addTaskToFirebase() {
@@ -159,7 +150,8 @@ async function addTaskToFirebase() {
             isDone: false
         });
         showAlert('Your Task has successfull add!');
-        getTodoList(auth.currentUser.email)
+        getTodoList(auth.currentUser.email);
+        TaskInput.value = '';
 
     } catch (error) {
         showAlert(`Failed to add tasks<br>${error.message}`);
