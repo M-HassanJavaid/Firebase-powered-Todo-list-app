@@ -76,8 +76,6 @@ document.addEventListener('click', (e) => {
 
     } else if (elem.id === 'alert-close-btn') {
         hideElem(alertBox)
-        resetInput(SignupFormEmailInput, SignupFormPasswordInput , Input)
-
     } else if (elem.id === 'Logout-btn') {
         showBlockElem(loader)
         getLogout()
@@ -97,7 +95,9 @@ document.addEventListener('click', (e) => {
 
 
     } else if (elem.className.includes('fa-xmark')) {
-        hideElem(signupForm, loginForm)
+        hideElem(signupForm, loginForm);
+        resetInput(SignupFormEmailInput, SignupFormPasswordInput)
+
 
     } else if (elem.className.includes('task-check')) {
         changeTaskState(elem.parentElement.dataset.id, elem.checked);
