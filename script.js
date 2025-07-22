@@ -76,6 +76,7 @@ document.addEventListener('click', (e) => {
 
     } else if (elem.id === 'alert-close-btn') {
         hideElem(alertBox)
+        resetInput(SignupFormEmailInput, SignupFormPasswordInput , Input)
 
     } else if (elem.id === 'Logout-btn') {
         showBlockElem(loader)
@@ -167,7 +168,7 @@ async function signup(email, password) {
         const user = userCredential.user;
         hideElem(signupForm)
         showAlert("✅ Signup successful!");
-        restInput(SignupFormEmailInput, SignupFormPasswordInput)
+        resetInput(SignupFormEmailInput, SignupFormPasswordInput)
     } catch (error) {
         showAlert(`Some error occured <br>${error.message}`);
     }
@@ -259,13 +260,13 @@ async function getLogin(email, password) {
         await signInWithEmailAndPassword(auth, email, password)
         hideElem(loginForm)
         showAlert('You have successfully login to your account!')
-        restInput(loginEmailInput, loginPasswordInput)
+        resetInput(loginEmailInput, loginPasswordInput)
     } catch (error) {
         showAlert(`Login failed!<br>${error.message}`)
     }
 }
 
-function restInput(...inputs) {
+function resetInput(...inputs) {
     inputs.forEach(input => input.value = '')
 }
 
