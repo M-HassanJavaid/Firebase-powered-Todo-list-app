@@ -96,7 +96,7 @@ document.addEventListener('click', (e) => {
 
     } else if (elem.className.includes('fa-xmark')) {
         hideElem(signupForm, loginForm);
-        resetInput(SignupFormEmailInput, SignupFormPasswordInput)
+        resetInput(SignupFormEmailInput, SignupFormPasswordInput);
 
 
     } else if (elem.className.includes('task-check')) {
